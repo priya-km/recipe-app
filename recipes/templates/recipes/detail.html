@@ -1,0 +1,50 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>RR - Recipe Details</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" href="{% static 'recipes/images/favicon-32x32.png' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'recipes/css/styles.css' %}">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Dancing+Script:wght@600&family=Oswald:wght@300;700&display=swap" rel="stylesheet">
+    <style type="text/css">
+        body {
+            background-color: #F6F5F2;
+            background-size: cover;
+            padding: 3px;
+        }
+        h2 {
+            text-align: center;
+            font-family: Dancing Script, 'Calibri', 'Trebuchet MS', sans-serif;
+            font-size: 50px;
+        }
+    </style>
+</head>
+<body>
+    <div class="nav-bar">
+        <img id="logo" src="{% static 'recipes/images/logo.png' %}" width="150px">
+        <input id="search" type="text" placeholder="   Search Recipes...">
+    </div>
+    <div class="details_modal">
+        <h2>{{object.name}}</h2>
+        <img src="{{object.pic.url}}" width="300" height="400" style="display: block; margin-left: auto; margin-right: auto; margin-bottom: 30px;"/>
+        <div class="details_body">
+            <div class="details_short">
+                <b>Cooking Time (min): </b> {{object.cooking_time}} <br>
+                <br>
+                <b>Difficulty: </b> {{object.calculate_difficulty}} <br><br>
+            </div>
+
+            <div class="details_long">
+                <b>Ingredients: </b> {{object.ingredients}} <br><br>
+                <b>Description: </b> {{object.description}} <br>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

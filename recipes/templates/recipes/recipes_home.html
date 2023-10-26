@@ -1,11 +1,79 @@
-<!DOCTYPE hmtl>
-<html>
-    <title>
-        Recipes Home
-    </title>
-    <body>
-        <h1 style='display: flex; justify-content: center; margin-top: 450px;'>
-            Welcome to the Recipes Home Page!
-        </h1>
-    </body>
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Recipe Rack - Home</title>
+    <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" href="{% static 'recipes/images/favicon-32x32.png' %}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Oswald:wght@300;700&display=swap" rel="stylesheet">
+    <style type="text/css">
+        body {
+            background: 
+                linear-gradient(rgba(0, 0, 0, 0.235), rgba(0, 0, 0, 0.235)),
+                url("{% static 'recipes/images/home.jpg' %}") no-repeat fixed;
+            background-size: cover;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: -15vh;
+            padding: 3px;
+        }
+
+        h1 {
+            font-family: 'Bebas Neue', sans-serif;
+            color: #ffffff;
+            text-align: center;
+            font-size: 200px;
+            letter-spacing: 5px;  
+            text-shadow: 
+                -1px -1px 0 #000, 
+                1px -1px 0 #000, 
+                -1px 1px 0 #000, 
+                1px 1px 0 #000;
+        }
+
+        h2 {
+            color: #000000;
+            font-family: 'Roboto Mono', 'Calibri', 'Trebuchet MS', sans-serif;
+            text-align: center;
+        }
+
+        /* Added styles */
+        .login-container {
+            background: #ffffff44;
+            padding: 15px;
+            border-radius: 5px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .form-field {
+            margin-bottom: 10px;
+        }
+
+    </style>
+</head>
+
+<body>
+    <div>
+        <h1>Recipe Rack</h1>
+    </div>
+    <div class="login-container">
+        <h2>Log in for Recipe access!</h2>
+        <form>
+            <div class="form-field">
+                <input type="email" placeholder="Email or Username" required />
+            </div>
+            <div class="form-field">
+                <input type="password" placeholder="Password" required />
+            </div>
+            <div class="form-field">
+                <button class="login-btn" type="submit" href="/list/">Login</button>
+            </div>
+        </form>
+    </div>
+</body>
+
 </html>

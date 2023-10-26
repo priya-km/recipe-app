@@ -35,5 +35,11 @@ class RecipeTest(TestCase):
         recipe = Recipe.objects.get(id=1)
         max_length = recipe._meta.get_field('name').max_length
         self.assertEqual(max_length, 120)
+
+    def test_get_absolute_url(self):
+        recipe = Recipe.objects.get(id=1)
+        #get_absolute_url() should take you to the detail page of recipe #1
+        #and load the URL /recipes/list/1
+        self.assertEqual(recipe.get_absolute_url(), '/list/1')
     
 
