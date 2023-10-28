@@ -4,32 +4,37 @@
     margin: 0;
 }
 
+/* NAVIGATION */
 .nav-bar {
-    width: 80vw;
-    height: 10vh;
-    margin: 0 auto;
-    margin-bottom: 30px;
-    border-radius: 20px;
     display: flex;
     justify-content: space-between;
+    align-items: center;  /* For vertical centering */
+    padding: 0 15px;      /* Optional padding for breathing space */
+}
+
+/* Grouping container for search bar and logout button */
+.nav-group {
+    display: flex;
+    align-items: center;  /* For vertical centering */
 }
 
 #search {
     background-color: rgba(255, 255, 255, 0.5);
     border: 1px solid black;
-    border-radius: 7px;
+    padding: 5px 10px;
+    border-radius: 4px;
     height: 40px;
-    margin: 12px 80px 12px 0;
+    margin: 12px 5px 12px 0;
     width: 300px;
     font-family: 'Roboto Mono', 'Calibri', 'Trebuchet MS', sans-serif;
     font-size: 17px;
-    margin-right: -20px;
+    margin-right: 5px;
 }
 
 #logo {
     width: 510px;
     height: 66px;
-    margin-left: -125px;
+    margin-left: -75px;
 }
 
 
@@ -113,3 +118,18 @@
     margin-bottom: 10px; /* Space between details_short and details_long */
     box-sizing: border-box; /* Ensure padding is included in the width */
 }
+
+.login_btn,
+.logout_btn,
+.back-home_btn {
+    width: 70px;
+    font-family: 'Roboto Mono', 'Calibri', 'Trebuchet MS', sans-serif;
+    font-size: 16px;
+    background-color: rgb(255, 116, 32);
+    border-radius: 5px;
+    color: white;
+    text-decoration: none;
+    padding: 10px;
+    text-align: center;
+}
+

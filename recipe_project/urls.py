@@ -19,11 +19,16 @@ from django.urls import path
 from django.urls import include
 from django.conf import settings
 from django.conf.urls.static import static
+from .views import login_view, logout_view
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    # home page
     path('', include('recipes.urls')),
+    # recipe list which is viewed upon login
     path('recipes/', include('recipes.urls')),
+    path('login/', login_view, name='login'),
+    path('logout/', logout_view, name='logout'),
 ]
 
 # so urlpatterns includes media info 

@@ -8,7 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="shortcut icon" href="{% static 'recipes/images/favicon-32x32.png' %}">
     <link rel="stylesheet" type="text/css" href="{% static 'recipes/css/styles.css' %}">
-        <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Dancing+Script:wght@600&family=Oswald:wght@300;700&display=swap" rel="stylesheet">
     <style type="text/css">
@@ -22,13 +22,41 @@
             font-family: Dancing Script, 'Calibri', 'Trebuchet MS', sans-serif;
             font-size: 50px;
         }
+        .logout_btn {
+            width: 70px;
+            height: 20px;
+            margin-top: 10px;
+            font-family: 'Roboto Mono', 'Calibri', 'Trebuchet MS', sans-serif;
+            font-size: 16px;
+            background-color: rgb(255, 62, 32);
+            border-radius: 5px;
+            color: white;
+            text-decoration: none;
+            padding: 10px;
+            text-align: center;
+        }
+        .back_btn {
+            width: 70px;
+            height: 20px;
+            margin-top: 10px;
+            font-family: 'Roboto Mono', 'Calibri', 'Trebuchet MS', sans-serif;
+            font-size: 16px;
+            background-color: rgb(255, 62, 32);
+            border-radius: 5px;
+            color: white;
+            text-decoration: none;
+            padding: 10px;
+        }
     </style>
 </head>
 <body>
+    <!-- NAVIGATION -->
     <div class="nav-bar">
         <img id="logo" src="{% static 'recipes/images/logo.png' %}" width="150px">
         <input id="search" type="text" placeholder="   Search Recipes...">
+         <a href ="{%url 'logout' %}" class="logout_btn"> Logout </a>
     </div>
+    <!-- RECIPE DETAILS -->
     <div class="details_modal">
         <h2>{{object.name}}</h2>
         <img src="{{object.pic.url}}" width="300" height="400" style="display: block; margin-left: auto; margin-right: auto; margin-bottom: 30px;"/>
@@ -38,10 +66,14 @@
                 <br>
                 <b>Difficulty: </b> {{object.calculate_difficulty}} <br><br>
             </div>
-
+            
             <div class="details_long">
                 <b>Ingredients: </b> {{object.ingredients}} <br><br>
                 <b>Description: </b> {{object.description}} <br>
+            </div>
+            <!-- Added Back Button below the Description -->
+            <div style="text-align: center; margin-top: 20px;">
+                <a href="{% url 'recipes:list' %}" class="back_btn">Back</a>
             </div>
         </div>
     </div>

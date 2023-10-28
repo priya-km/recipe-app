@@ -29,10 +29,11 @@
             font-size: 200px;
             letter-spacing: 5px;  
             text-shadow: 
-                    -3px -3px 0 #000, 
-                    3px -3px 0 #000, 
-                    -3px 3px 0 #000, 
-                    3px 3px 0 #000;
+                    -4px -4px 0 #000, 
+                    4px -4px 0 #000, 
+                    -4px 4px 0 #000, 
+                    4px 4px 0 #000;
+            margin-top: 200px;
         }
 
         h2 {
@@ -41,7 +42,6 @@
             text-align: center;
         }
 
-        /* Added styles */
         .login-container {
             background: #ffffff44;
             padding: 15px;
@@ -51,6 +51,16 @@
 
         .form-field {
             margin-bottom: 10px;
+        }
+
+        form {
+            font-family: 'Roboto Mono', 'Calibri', 'Trebuchet MS', sans-serif; /* Setting font for form */
+            font-size: 20px;
+        }
+
+        form div, form input {
+            display: block;
+            width: 100%;
         }
 
         .center-button {
@@ -67,8 +77,8 @@
             text-decoration: none;
             padding: 10px;
             text-align: center;
+            margin-top: 20px;
         }
-
     </style>
 </head>
 
@@ -78,11 +88,16 @@
     </div>
     <div class="login-container">
         <h2>Log in for Recipe access!</h2>
-        <!-- add css for login button and center, check github for old form code and put that in login.html -->
-        <div class="center-button">
-        <!-- LOGIN BUTTON -->
-        <a href ="{%url 'login' %}" class="login_btn"> Login </a>
-        </div>
+        {% if error_message %}
+            {{error_message}}
+        {% endif %}
+        <form action="" method="POST">
+            {% csrf_token %}
+            {{form}}
+            <div class="form-field center-button">
+                <button type="submit" class="login_btn">Login</button>
+            </div>
+        </form>
     </div>
 </body>
 

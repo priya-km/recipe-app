@@ -22,15 +22,32 @@
             font-family: 'Roboto Mono', 'Calibri', 'Trebuchet MS', sans-serif;
             text-align: center;
         }
+        
+        .logout_btn {
+            width: 70px;
+            height: 20px;
+            margin-top: 10px;
+            font-family: 'Roboto Mono', 'Calibri', 'Trebuchet MS', sans-serif;
+            font-size: 16px;
+            background-color: rgb(255, 62, 32);
+            border-radius: 5px;
+            color: white;
+            text-decoration: none;
+            padding: 10px;
+            text-align: center;
+        }
+/* edit search bar/logout button to move */
     </style>
 </head>
 
 <body>
+    <!-- NAVIGATION -->
     <div class="nav-bar">
         <img id="logo" src="{% static 'recipes/images/logo.png' %}" width="150px">
-        <input id="search" type="text" placeholder="   Search Recipes...">
+        <input id="search" type="text" placeholder="   Search Recipes..." class="search">
+        <a href ="{%url 'logout' %}" class="logout_btn"> Logout </a>
     </div>
-
+    <!-- RECIPES LIST, for loops iterates through entire list to display all recipes -->
     <div class="recipe_grid">
         {% for object in object_list %}
         <div class="grid_item">
