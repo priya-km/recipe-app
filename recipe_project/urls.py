@@ -26,7 +26,6 @@ urlpatterns = [
     # home page
     path('', include('recipes.urls')),
     # recipe list which is viewed upon login
-    path('recipes/', include('recipes.urls')),
     path('login/', login_view, name='login'),
     path('logout/', logout_view, name='logout'),
 ]

@@ -52,8 +52,9 @@
 <body>
     <!-- NAVIGATION -->
     <div class="nav-bar">
-        <img id="logo" src="{% static 'recipes/images/logo.png' %}" width="150px">
-        <input id="search" type="text" placeholder="   Search Recipes...">
+        <a href="{% url 'recipes:list' %}">
+            <img id="logo" src="{% static 'recipes/images/logo.png' %}" width="150px">
+        </a>
          <a href ="{%url 'logout' %}" class="logout_btn"> Logout </a>
     </div>
     <!-- RECIPE DETAILS -->

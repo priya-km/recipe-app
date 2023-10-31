@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <title>RR - Recipes List</title>
+    <title>RR | Recipes List</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     {% load static %}
     <link rel="shortcut icon" href="{% static 'recipes/images/favicon-32x32.png' %}">
@@ -43,8 +43,9 @@
 <body>
     <!-- NAVIGATION -->
     <div class="nav-bar">
-        <img id="logo" src="{% static 'recipes/images/logo.png' %}" width="150px">
-        <input id="search" type="text" placeholder="   Search Recipes..." class="search">
+        <a href="{% url 'recipes:list' %}">
+            <img id="logo" src="{% static 'recipes/images/logo.png' %}" width="150px">
+        </a>
         <a href ="{%url 'logout' %}" class="logout_btn"> Logout </a>
     </div>
     <!-- RECIPES LIST, for loops iterates through entire list to display all recipes -->
