@@ -1,0 +1,135 @@
+.body {
+    width: 100%;
+    padding: 0;
+    margin: 0;
+}
+
+/* NAVIGATION */
+.nav-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;  /* For vertical centering */
+    padding: 0 15px;      /* Optional padding for breathing space */
+}
+
+/* Grouping container for search bar and logout button */
+.nav-group {
+    display: flex;
+    align-items: center;  /* For vertical centering */
+}
+
+#search {
+    background-color: rgba(255, 255, 255, 0.5);
+    border: 1px solid black;
+    padding: 5px 10px;
+    border-radius: 4px;
+    height: 40px;
+    margin: 12px 5px 12px 0;
+    width: 300px;
+    font-family: 'Roboto Mono', 'Calibri', 'Trebuchet MS', sans-serif;
+    font-size: 17px;
+    margin-right: 5px;
+}
+
+#logo {
+    width: 510px;
+    height: 66px;
+    margin-left: -75px;
+}
+
+
+.recipe_grid {
+    display: grid;
+    grid-template-columns: repeat(3, 450px); 
+    padding: 23px 23px;  
+    max-width: 1390px; 
+    margin: 0 auto;  /* Center the grid */
+    border-radius: 20px;
+    grid-gap: 40px;
+}
+
+
+
+
+.grid_item {
+    padding: 0 0 15px 15px;
+    position: relative;
+    font-family: 'Roboto Mono', 'Calibri', 'Trebuchet MS', sans-serif;
+}
+
+.food_images {
+    width: 332px;
+    height: 508px;
+    margin: 0 auto;
+    display: block;
+    position: relative; 
+    line-height: 0;
+}
+
+
+.recipe_name {
+    color: black;
+    text-decoration: none;
+    text-align: center;
+    font-family: Dancing Script, 'Calibri', 'Trebuchet MS', sans-serif;
+    font-size: 40px;
+    position: absolute; /* Position it over the image */
+    top: 50%; /* Center vertically */
+    left: 50%; /* Center horizontally */
+    transform: translate(-50%, -50%); /* Ensures true centering */
+    background-color: rgba(255, 255, 255, 0.678); /* Transparent white background */
+    padding: 10px 15px; /* Add some padding around the text */
+    border-radius: 5px; /* Round the corners of the background */
+}
+
+
+.recipe_name:hover {
+    color: rgb(81, 101, 255)
+}
+
+.details_modal {
+    width: 80%;  /* Set a width and */
+    margin: 20px auto;  /* center the modal and provide some top and bottom margin */
+    text-align: center; /* Center text content */
+    font-family: 'Roboto Mono', 'Calibri', 'Trebuchet MS', sans-serif;
+    padding: 20px; /* Gives a little space inside the modal */
+    border-radius: 10px; /* Optional, if you want rounded corners */
+    font-size: 20px;
+    margin-top: -50px;
+}
+
+.details_body img {
+    width: 75%; /* Make the image take up 75% of its container's width */
+    max-width: 300px;  /* But not more than 300px */
+    margin-bottom: 30px;
+    display: block; /* Ensure the image is a block-level element */
+    margin: 0 auto; /* Center the image horizontally */
+}
+
+.details_body {
+    display: flex;
+    flex-direction: column;  /* Stack items on top of each other */
+    align-items: center;  /* Center items horizontally */
+}
+
+.details_short, .details_long {
+    width: 100%; /* Take full width of the parent */
+    text-align: left; /* Align text to the left, especially for the details */
+    margin-bottom: 10px; /* Space between details_short and details_long */
+    box-sizing: border-box; /* Ensure padding is included in the width */
+}
+
+.login_btn,
+.logout_btn,
+.back-home_btn {
+    width: 70px;
+    font-family: 'Roboto Mono', 'Calibri', 'Trebuchet MS', sans-serif;
+    font-size: 16px;
+    background-color: rgb(255, 116, 32);
+    border-radius: 5px;
+    color: white;
+    text-decoration: none;
+    padding: 10px;
+    text-align: center;
+}
+
