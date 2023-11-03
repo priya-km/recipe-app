@@ -1,0 +1,109 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Create Recipe | RR</title>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="shortcut icon" href="{% static 'recipes/images/favicon-32x32.png' %}">
+  <link rel="stylesheet" type="text/css" href="{% static 'recipes/css/styles.css' %}">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Dancing+Script:wght@600&family=Oswald:wght@300;700&display=swap" rel="stylesheet">
+  <style type="text/css">
+    body {
+        background-color: #F6F5F2;
+        font-family: 'Oswald', sans-serif;
+        padding: 0;
+        margin: 0;
+    }
+    h1, h2 {
+      text-align: center;
+      font-family: Dancing Script, 'Calibri', 'Trebuchet MS', sans-serif;
+    }
+    h1 {
+      font-size: 50px;
+    }
+    h2 {
+      font-size: 30px; /* Adjust as necessary */
+    }
+    .form_data {
+      border-radius: 10px;
+      padding: 20px;
+      font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+      text-align: center;
+      font-size: 20px;
+    }
+    .form-group {
+      margin-bottom: 1rem;
+    }
+    .nav-bar {
+        background: #fff;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0.5rem 1rem;
+    }
+    .nav-item a {
+        font-family: 'Bebas Neue', cursive;
+        font-size: 1.125rem;
+        color: #333;
+        text-decoration: none;
+        margin: 0 1rem;
+        transition: color 0.3s ease;
+    }
+    .nav-item a:hover, .nav-item a.active {
+        color: #e63946;
+    }
+    .logout_btn, .back_btn, .email-link {
+        font-size: 1rem; /* 16px */
+        background-color: #e63946;
+        border: none;
+        padding: 0.5rem 1rem;
+        color: white;
+        text-decoration: none;
+        border-radius: 5px;
+        transition: background-color 0.3s ease;
+    }
+    .logout_btn:hover, .back_btn:hover, .email-link:hover {
+        background-color: #d62828;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- NAVIGATION -->
+  <div class="nav-bar">
+    <a href="{% url 'recipes:list' %}">
+      <img id="logo" src="{% static 'recipes/images/logo.png' %}" width="150px">
+    </a>
+    <div class="nav-item">
+        <a href="{% url 'recipes:list' %}">All Recipes</a>
+        <a href="{% url 'recipes:create' %}" class="active">Create</a>
+        <a href="{% url 'recipes:search' %}">Search</a>
+        <a href="{% url 'recipes:about' %}">About</a>
+        <a href="{% url 'logout' %}" class="logout_btn">Logout</a>
+    </div>
+  </div>
+
+  <h1>Create Recipe</h1>
+  <h2>All fields are required.</h2>
+  <form action="" method="POST" class="form_data" enctype="multipart/form-data">
+    {% csrf_token %}
+    {% for field in create_form %}
+      <div class="form-group">
+        {{ field.label_tag }} {{ field }}
+        {% if field.help_text %}
+          <small style="display: inline-block;">{{ field.help_text }}</small>
+        {% endif %}
+      </div>
+    {% endfor %}
+    <button type="submit" class="logout_btn">Create</button>
+  </form>
+</body>
+
+</html>

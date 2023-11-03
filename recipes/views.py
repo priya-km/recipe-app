@@ -1,8 +1,9 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.views.generic import ListView, DetailView
+from django.urls import reverse
 from .models import Recipe
 from django.contrib.auth.mixins import LoginRequiredMixin # protecting this view requiring the user to login to view it
-from .forms import RecipeSearchForm
+from .forms import RecipeSearchForm, CreateRecipeForm
 import pandas as pd
 from .utils import get_recipename_from_id, get_chart
 from django.contrib.auth.decorators import login_required
@@ -18,6 +19,39 @@ class RecipeDetailView(LoginRequiredMixin, DetailView): #Loginreq here to protec
 
 def home(request):
     return render(request, 'recipes/recipes_home.html')
+
+def about_view(request):
+    return render(request, 'recipes/about.html')
+
+@login_required
+def create_view(request):
+    create_form = CreateRecipeForm(request.POST or None, request.FILES or None)
+
+    if request.method == 'POST' and create_form.is_valid():
+        name = create_form.cleaned_data.get('name')
+        cooking_time = create_form.cleaned_data.get('cooking_time')
+        ingredients = create_form.cleaned_data.get('ingredients')
+        pic = create_form.cleaned_data.get('pic')  # Retrieve the uploaded image
+        description = create_form.cleaned_data.get('description')
+
+        recipe = Recipe.objects.create(
+            name=name,
+            cooking_time=cooking_time,
+            ingredients=ingredients,
+            description=description,
+            pic=pic  # Save the image to the recipe
+
+        )
+
+        return redirect(recipe.get_absolute_url())  # Redirect after saving
+
+    context = {
+        'create_form': create_form,
+    }
+
+    return render(request, 'recipes/create.html', context)
+
+
 
 #define function based view - records()
 @login_required
