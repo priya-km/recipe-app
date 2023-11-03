@@ -1,0 +1,185 @@
+body {
+    width: 100%;
+    padding: 0;
+    margin: 0;
+}
+
+/* NAVIGATION */
+
+.nav-bar {
+    background: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.5rem 1rem;
+}
+.nav-item a {
+        font-family: 'Bebas Neue', cursive;
+        font-size: 1.125rem;
+        color: #333;
+        text-decoration: none;
+        margin: 0 1rem;
+        transition: color 0.3s ease;
+    }
+.nav-item a:hover, .nav-item a.active {
+        color: #e63946;
+    }
+.logout_btn, .back_btn, .email-link {
+        font-size: 1rem; /* 16px */
+        background-color: #e63946;
+        border: none;
+        padding: 0.5rem 1rem;
+        color: white;
+        text-decoration: none;
+        border-radius: 5px;
+        transition: background-color 0.3s ease;
+    }
+.logout_btn:hover, .back_btn:hover, .email-link:hover {
+        background-color: #d62828;
+    }
+section {
+    padding: 2rem 1rem; /* Add horizontal padding */
+    max-width: 800px;
+    margin: auto; /* Center the section */
+    }
+
+#search {
+    background-color: rgba(255, 255, 255, 0.5);
+    border: 1px solid black;
+    padding: 5px 10px;
+    border-radius: 4px;
+    height: 40px;
+    margin: 12px 5px 12px 0;
+    width: 300px;
+    font-family: 'Roboto Mono', 'Calibri', 'Trebuchet MS', sans-serif;
+    font-size: 17px;
+    margin-right: 5px;
+}
+
+#logo {
+    width: 510px;
+    height: 66px;
+    margin-left: -75px;
+}
+
+/* RECIPE LIST */
+
+.recipe_grid {
+    display: grid;
+    grid-template-columns: repeat(3, 450px);
+    padding: 23px 23px;
+    max-width: 1390px;
+    margin: 0 auto;
+    border-radius: 20px;
+    grid-gap: 40px;
+}
+
+.grid_item {
+    padding: 0 0 15px 15px;
+    position: relative;
+    font-family: 'Roboto Mono', 'Calibri', 'Trebuchet MS', sans-serif;
+}
+
+.food_images {
+    width: 332px;
+    height: 508px;
+    margin: 0 auto;
+    display: block;
+    position: relative;
+    line-height: 0;
+}
+
+.recipe_name {
+    color: black;
+    text-decoration: none;
+    text-align: center;
+    font-family: Dancing Script, 'Calibri', 'Trebuchet MS', sans-serif;
+    font-size: 40px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(255, 255, 255, 0.678);
+    padding: 10px 15px;
+    border-radius: 5px;
+}
+
+.recipe_name:hover {
+    color: rgb(81, 101, 255);
+}
+
+/* RECIPE DETAILS */
+.details_modal {
+    width: 80%;
+    margin: 20px auto;
+    text-align: center;
+    font-family: 'Roboto Mono', 'Calibri', 'Trebuchet MS', sans-serif;
+    padding: 20px;
+    border-radius: 10px;
+    margin-top: -50px;
+}
+
+.details_body img {
+    width: 75%;
+    max-width: 300px;
+    margin-bottom: 30px;
+    display: block;
+    margin: 0 auto;
+}
+
+.details_body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.details_short, .details_long {
+    width: 100%;
+    text-align: left;
+    margin-bottom: 10px;
+    box-sizing: border-box;
+}
+
+/* BUTTONS */
+
+.login_btn,
+.logout_btn,
+.back-home_btn {
+    width: 70px;
+    font-family: 'Roboto Mono', 'Calibri', 'Trebuchet MS', sans-serif;
+    font-size: 16px;
+    background-color: rgb(255, 116, 32);
+    border-radius: 5px;
+    color: white;
+    text-decoration: none;
+    padding: 10px;
+    text-align: center;
+}
+
+/* FORM */
+.form_data ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.form_data li {
+  list-style-type: none;
+}
+
+.required-message {
+  text-align: center;
+  margin-bottom: 10px;
+  font-style: italic;
+  color: #555;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+input::placeholder {
+  color: #888;
+  opacity: 1;
+}
