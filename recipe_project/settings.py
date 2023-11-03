@@ -27,7 +27,7 @@ SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY','django-insecure-ml49cp(e)=yakpe
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['https://pkm-recipes-775734c521de.herokuapp.com']
+ALLOWED_HOSTS = ['pkm-recipes-775734c521de.herokuapp.com']
 
 
 # Application definition
