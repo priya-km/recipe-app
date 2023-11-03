@@ -145,3 +145,5 @@ dmypy.json
 #Database
 *.sqlite3
 
+settings.py
+
