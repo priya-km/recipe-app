@@ -15,6 +15,29 @@ Password: DemoUser
 <p>*Please note that when trying out the demo hosted on Heroku, you may not see the images of recipes. This is due to Heroku's ephemeral filesystem, which resets every time the dyno restarts. As a result, uploaded images are not persisted across dyno restarts.</p>
 <br>
 <p>Demo users are not authorized to access the Django admin panel and are for user demonstration purposes only.</p>
+
+## Local Demo Installation
+#### Requirements:
+- Python 3.11.6
+<br>
+Note: Run these commands in the terminal from the desired root directory
+
+1. Clone the repo
+   ```sh
+   git clone https://github.com/priya-km/recipe-app.git
+   ```
+2. Install the requirements
+   ```sh
+   pip install -r requirements.txt
+   ```
+3. Migrate the database
+   ```sh
+   python manage.py migrate
+   ```
+3. Run the local server
+   ```sh
+   python manage.py runserver
+   ```
 <h2>Key Features</h2>
 ● Allow for user authentication, login, and logout.<br>
 ● Let users search for recipes according to ingredients.<br>
