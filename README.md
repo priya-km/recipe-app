@@ -7,7 +7,7 @@
 
 https://github.com/priya-km/recipe-app/assets/118628757/a02a3c36-f3f5-44fc-99f7-67afd713fa99
 
-## [Live Demo](https://github.com/priya-km?tab=repositories "RR Live Demo")
+## [Live Demo](https://pkm-recipes-775734c521de.herokuapp.com/ "RR Live Demo")
 ### Live Demo Login: (case sensitive)
 Username: demo <br>
 Password: DemoUser
