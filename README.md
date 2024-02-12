@@ -7,12 +7,7 @@
 
 https://github.com/priya-km/recipe-app/assets/118628757/a02a3c36-f3f5-44fc-99f7-67afd713fa99
 
-## [Live Demo](https://pkm-recipes-775734c521de.herokuapp.com/ "RR Live Demo")
-### Live Demo Login: (case sensitive)
-Username: demo <br>
-Password: DemoUser
-<br>
-<p>*Please note that when trying out the demo hosted on Heroku, you may not see the images of recipes. This is due to Heroku's ephemeral filesystem, which resets every time the dyno restarts. As a result, uploaded images are not persisted across dyno restarts. I hope to implement an external storage solution in the near future.</p>
+<p><b>*Due to Herokus discontinued support of free dynos, there is now only a video demo available for this app.</b></p>
 <br>
 <p>Demo users are not authorized to access the Django admin panel and are for user demonstration purposes only.</p>
 
