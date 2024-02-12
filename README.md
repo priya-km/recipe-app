@@ -9,7 +9,6 @@ https://github.com/priya-km/recipe-app/assets/118628757/a02a3c36-f3f5-44fc-99f7-
 
 <p><b>*Due to Herokus discontinued support of free dynos, there is now only a video demo available for this app.</b></p>
 <br>
-<p>Demo users are not authorized to access the Django admin panel and are for user demonstration purposes only.</p>
 
 ## Local Demo Installation
 #### Requirements:
